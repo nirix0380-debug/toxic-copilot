@@ -1,0 +1,53 @@
+{
+  "name": "toxic-copilot",
+  "displayName": "Toxic Copilot 💀",
+  "description": "Жестко разъёбывает говнокод, переменные a/b и закомменченный мусор по словарю русского мата.",
+  "version": "1.0.0",
+  "publisher": "my-first-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/toxic-copilot"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "toxic-copilot.roastFile",
+        "title": "💀 Toxic Copilot: Впечатать комменты позора прямо в код"
+      },
+      {
+        "command": "toxic-copilot.aiRoast",
+        "title": "🔥 Toxic Copilot: ИИ-разъёб выделенного кода (Gemini)"
+      },
+      {
+        "command": "toxic-copilot.setApiKey",
+        "title": "🔑 Toxic Copilot: Вставить бесплатный Gemini API ключ"
+      }
+    ],
+    "configuration": {
+      "title": "Toxic Copilot",
+      "properties": {
+        "toxicCopilot.geminiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Бесплатный ключ от aistudio.google.com"
+        },
+        "toxicCopilot.roastOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Кидать токсичные пуши при сохранении Cmd+S."
+        }
+      }
+    }
+  }
+}
